@@ -1,0 +1,13 @@
+{
+	"scripts": {
+		"start": "node app.js"
+	},
+	"dependencies": {
+		"ejs": "^2.5.5",
+		"connect-busboy": "0.0.2",
+		"express": "^4.14.0",
+		"fs": "0.0.1-security",
+		"morgan": "^1.7.0",
+		"path": "^0.12.7"
+	}
+}
