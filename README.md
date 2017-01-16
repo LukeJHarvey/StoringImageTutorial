@@ -58,7 +58,8 @@
 7.  Let's setup the ejs files that we will be using during this project.
 	
 	This will be the header for each page.
-	`**Header.ejs**`
+	
+	`header.ejs`
 
 	```html
 	<!DOCTYPE html>
@@ -73,7 +74,8 @@
 	```
 
 	This will be the footer for each page.
-	`**Footer.ejs**`
+
+	`footer.ejs`
 
 	```html
 	</body>
@@ -81,7 +83,8 @@
 	```
 
 	This will be the page people are directed to if they go onto a part of the website with no function.
-	`**404.ejs**`
+
+	`404.ejs`
 
 	```html
 	<% include header %>
@@ -90,7 +93,8 @@
 	```
 
 	This will be the main page for the website.
-	`**index.ejs**`
+
+	`index.ejs`
 
 	```html
 	<% include header %>
@@ -107,6 +111,9 @@
 	```
 
 	This will be one of the pages to display the images stored
+
+	`img.ejs`
+
 	```html
 	<% include header %>
 	<h1>Ejs Page with Image</h1>
@@ -116,3 +123,5 @@
 
 	<% include footer %>
 	```
+
+8.  Now we will show index.ejs when someone goes onto localhost:3000/
