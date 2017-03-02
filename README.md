@@ -227,7 +227,7 @@
 
 11. Now I'm going to show you two different methods to getting at the files we have stored. The first will just display the image directly from the folder. The second will display the image on an ejs webpage.
 
-11.1 This method is more or less pretty simple. If a client went onto `localhost:3000/files/file.type` file being the name, and type being its type, the server will send the file directly to the client. 
+ Method 1: This method is more or less pretty simple. If a client went onto `localhost:3000/files/file.type` file being the name, and type being its type, the server will send the file directly to the client. 
 
 	```javascript
 	//sets a path that leads to your files folder
@@ -236,7 +236,7 @@
 	app.use("/files", express.static(staticPath));
 	```
 
-11.2 This method is different, instead of just sending the file, the server will instead send an ejs file that will have the image on it already. Requires the other method to have been done first.
+ Method 2: This method is different, instead of just sending the file, the server will instead send an ejs file that will have the image on it already. Requires the other method to have been done first.
 
 	```javascript
 	app.get("/image/:id", function(req,res) {
