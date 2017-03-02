@@ -18,20 +18,19 @@ app.use(morgan("short"));
 //Will allow us to get Images later.
 app.use(busboy());
 
+app.get("/", function(req,res) {
+	res.render("index");
+});
 //sets a path that leads to your files folder
 var staticPath = path.join(__dirname, "files");
 //express.static will look at staticPath and will directly render the file that a client is looking for on the browser.
 app.use("/files", express.static(staticPath));
 
 app.get("/image/:id", function(req,res) {
-	var str = req.headers.host + "/files/" + req.params.id;
-	res.render("img", {
-		imgstuff: str
-	})
-});
-
-app.get("/", function(req,res) {
-	res.render("index");
+	var str = "http://" + req.headers.host + "/files/" + req.params.id;
+    res.render("img", {
+        imgstuff: str
+    })
 });
 
 app.post("/", function(req,res) {
@@ -57,7 +56,10 @@ app.post("/", function(req,res) {
 	fstream.on('close', function() {
 		console.log("file uploaded to server");
 		//redirects the client to where the image will be displayed later.
+		//if method 11.2
 		res.redirect("/image/" + id);
+		//if method 11.1
+		//res.redirect("/files/" + id);
 	});
 	});
 });
